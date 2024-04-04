@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma spectrometr</title>
+    <script language="javascript" type="text/javascript" src="jquery.chart.js"></script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="countCadr">
+        <h5>Количество кадров: <span id="count_cadr">0</span></h5>
+      </div>
+      <div class="child">
+        <div class="containerForChart">
+          <canvas id="myChart" width="800px"></canvas>
+        </div>
+      </div>
+      
+
+        <fieldset>
+          <legend>Вид отображаемых данных:</legend>
+          <div>
+            <input type="radio" id="acc" name="gamma_data" value="acc" checked />
+            <label for="acc">Накопленные</label>
+          </div>
+          <div>
+            <input type="radio" id="avg" name="gamma_data" value="avg" />
+            <label for="avg">Среднее за секунду</label>
+          </div>
+          <div>
+            <input type="radio" id="cadr" name="gamma_data" value="cadr" />
+            <label for="cadr">Последняя секунда</label>
+          </div>
+          
+        </fieldset>
+      
+
+        <fieldset>
+          <legend>Режим отображаемых данных:</legend>
+          <div>
+            <input type="radio" id="log" name="mode_data" value="acc"  />
+            <label for="acc">Логарифмический</label>
+          </div>
+          <div>
+            <input type="radio" id="casual" name="mode_data" value="avg" checked/>
+            <label for="avg">Обычный</label>
+          </div>
+        </fieldset>
+
+      
+
+      <div class="bottomMenu">
+        <button id="clearBtn">Очистить график</button>
+        <button id="openSettings">Настройки</button>
+      </div>
+    </div>
+    <script src="chart.js"></script>
+  </body>
+</html>

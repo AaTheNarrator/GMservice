@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="conf.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamma spectrometr</title>
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <div id="sys-state">
+
+          <!--<p>t<sub>кристалла</sub> = 50&#176;C</p>-->
+          <p>t<sub>отсека</sub> = <span id="temp"></span>&#176;C</p>
+          <p>GPS: <span id="lat"></span>&#176; <span id="long"></span>&#176;</p>
+          <p>Высота: <span id="alt"></span>м</p>
+          <p>Количество спутников: <span id="sats"></span></p>
+          <p>Давление <span id="press">760</span>мм рт. ст.</p>
+          <p>Заряд аккумулятора <span id="batt">0</span>%</p>
+          <p><span id="date"></span> <span id="time"></span></p>
+          <p>Количество кадров: <span id="count_cadr"></span></p>
+        </div>
+
+        <div id = "parametrs">
+          <div class="parametr">
+            <span id="N">"Усиление" = 0</span>
+            <div class="set-parametr"><button id="set-n">Установить<br>"Усиление" = </button><input id="new-n" value=""></div>
+          </div>
+
+          <hr>
+          <div class="parametr">
+            <span id="L">"Порог" = 0</span>
+            <div class="set-parametr"><button id="set-l">Установить<br>"Порог" = </button><input id="new-l"></div>
+          </div>
+          <hr>
+          <div class="parametr">
+            <span id="M">"Сдвиг"= 0</span>
+            <div class="set-parametr"><button id="set-m">Установить<br>"Сдвиг" = </button><input id="new-m" value=""></div>
+          </div>
+        </div>
+
+        <div id="work-mode">
+          <p>Режим работы: <span id="mode">Пауза</span><br> Стабилизация: <span id="stabmode">Включена</span></p>
+          <div class="select-work-mode">
+            <button id="set-work-mode">Выбрать режим: </button>
+            <select id="choosen-mode">
+                <option value="work">Работа</option>
+<!--            <option value="conf">Настройка</option>-->
+                <option value="pause">Пауза</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="stab">
+            <button id="stabilize">Стабилизация: <span id="stabmodebtn">Вкл</span></button>
+        </div><br>
+  <div class="buttomMenu">
+    <a href="http://192.168.4.1/download" download="gamma-data.csv" id="downloadBtn">Скачать данные</a>
+	  <button id="deleteBtn">Удалить данные</button>
+    <a href="/">График</a>
+  </div>
+	<button id="dev-menu" style="opacity: 0" onclick="confirm('Открыть страницу для прошивки?') ? window.location = '/update' : null">DEV MENU</button>
+      </main>
+      <script src="conf.js"></script>
+  </body>
+</html>
